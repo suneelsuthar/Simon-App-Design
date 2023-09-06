@@ -1,22 +1,30 @@
 import React from "react";
-import { View, TouchableOpacity, Text, StyleSheet,SafeAreaView } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import theme from "../../../theme";
 
-const FirstPage = ({navigation}) => {
+const FirstPage = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles._container}>
+    <View style={styles._container}>
       <View style={styles._body}>
         <Text style={styles._name}>CENT</Text>
       </View>
       <View style={styles._footer}>
-        <TouchableOpacity style={[styles._btn,{backgroundColor:"#010022"}]} onPress={()=>navigation.navigate("Nombre")}>
-          <Text style={[styles._btn_text,{color:theme.white}]}>Iniciar sesión</Text>
+        <TouchableOpacity
+          style={[styles._btn, { backgroundColor: "#010022" }]}
+          onPress={() => navigation.navigate("Nombre")}
+        >
+          <Text style={[styles._btn_text, { color: theme.white }]}>
+            Iniciar sesión
+          </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles._btn} onPress={()=>navigation.navigate("Nombre")}>
+        <TouchableOpacity
+          style={styles._btn}
+          onPress={() => navigation.navigate("Nombre")}
+        >
           <Text style={styles._btn_text}>Crear cuenta</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -24,8 +32,8 @@ const styles = StyleSheet.create({
   _container: {
     flex: 1,
     backgroundColor: theme.primary,
-    padding:10,
-    paddingVertical:50
+    padding: 10,
+    paddingVertical: 50,
   },
   _body: {
     flex: 1,
@@ -42,20 +50,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
   },
-  _btn:{
-    height:50,
-    width:95,
-    backgroundColor:theme.white,
-    borderRadius:100,
-    width:"45%",
-    justifyContent:"center",
-    alignItems:"center",
-    elevation:4
+  _btn: {
+    height: 50,
+    width: 95,
+    backgroundColor: theme.white,
+    borderRadius: 100,
+    width: "45%",
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 4,
   },
-  _btn_text:{
-    // fontSize:10
-  }
-  
+  _btn_text: {
+  },
 });
 
 export default FirstPage;

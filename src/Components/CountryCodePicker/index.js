@@ -3,6 +3,8 @@ import {
   SafeAreaView,
   StyleSheet,
   View,
+  Keyboard,
+  TouchableWithoutFeedback 
 } from "react-native";
 import PhoneInput from "react-native-phone-number-input";
 import theme from "../../../theme";
@@ -15,7 +17,7 @@ const CountryCodePicker = ({onTextChange}) => {
   const phoneInput = useRef();
   return (
         <View style={styles.container}>
-          
+
           <PhoneInput
             ref={phoneInput}
             defaultValue={value}
@@ -25,14 +27,18 @@ const CountryCodePicker = ({onTextChange}) => {
             onChangeText={(text) => {
               setValue(text);
             }}
+            onEndEditing={()=>alert("gjhgj")}
             onChangeFormattedText={(text) => {
               setFormattedValue(text);
               onTextChange(text)
             }}
-            containerStyle={{backgroundColor:theme.white,elevation:0,width:"100%"}}
-            countryPickerButtonStyle ={styles.countryPickerButtonStyle}
-            textContainerStyle={styles.textContainerStyle}
-            textInputStyle={styles.textInputStyle}
+            containerStyle={{backgroundColor:theme.white,elevation:0,width:"100%",
+            shadowColor: theme.white,
+            shadowOffset: { width: 0, height: 2 },
+          }}
+          countryPickerButtonStyle ={styles.countryPickerButtonStyle}
+          textContainerStyle={styles.textContainerStyle}
+          textInputStyle={styles.textInputStyle}
             codeTextStyle={styles.codeTextStyle}
             withShadow
             autoFocus
