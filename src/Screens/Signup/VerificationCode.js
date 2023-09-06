@@ -10,7 +10,7 @@ import OTPTextInput from "react-native-otp-textinput";
 
 import theme from "../../../theme";
 import { Button } from "../../Components";
-const VerificationCode = () => {
+const VerificationCode = ({ navigation }) => {
   let otpInput = useRef(null);
 
   return (
@@ -37,7 +37,12 @@ const VerificationCode = () => {
           </Text>
         </View>
         <View style={styles._btn_section}>
-          <Button title={"Crear cuenta"} />
+          <Button
+            title={"Crear cuenta"}
+            onPress={() => {
+              navigation.navigate("UserDate");
+            }}
+          />
         </View>
       </View>
     </TouchableWithoutFeedback>
