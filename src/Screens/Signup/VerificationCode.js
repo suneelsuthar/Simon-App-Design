@@ -1,3 +1,4 @@
+//@ts-check
 import React, { useRef } from "react";
 import {
   View,
@@ -5,14 +6,17 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   Keyboard,
+  Platform,
 } from "react-native";
 import OTPTextInput from "react-native-otp-textinput";
 
 import theme from "../../../theme";
 import { Button } from "../../Components";
+import { useKeyboard } from "../../hooks/KeyboardAware";
 const VerificationCode = ({ navigation }) => {
   let otpInput = useRef(null);
 
+  const keyboardHeight = useKeyboard();
   return (
     <TouchableWithoutFeedback
       onPress={() => Keyboard.dismiss()}
@@ -36,7 +40,12 @@ const VerificationCode = ({ navigation }) => {
             ¿Ya tienes una cuenta? Inicia sesión
           </Text>
         </View>
-        <View style={styles._btn_section}>
+        <View
+          style={{
+            ...styles._btn_section,
+            marginBottom: Platform.OS === "ios" ? keyboardHeight + 10 : 0,
+          }}
+        >
           <Button
             title={"Crear cuenta"}
             onPress={() => {

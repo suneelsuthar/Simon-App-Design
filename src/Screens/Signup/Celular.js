@@ -1,3 +1,5 @@
+// @ts-check
+
 import React, { useState } from "react";
 import {
   View,
@@ -5,14 +7,20 @@ import {
   StyleSheet,
   Keyboard,
   TouchableWithoutFeedback,
+  Platform,
 } from "react-native";
 import { CountryCodePicker } from "../../Components";
 import theme from "../../../theme";
 import { Button } from "../../Components";
+import { useKeyboard } from "../../hooks/KeyboardAware";
+import ts from "typescript";
 const Signup = ({ navigation }) => {
   const numberHandleChange = (_num) => {
     console.log(_num);
   };
+
+  const keyboardHeight = useKeyboard();
+  console.log({ keyboardHeight });
   return (
     <TouchableWithoutFeedback
       onPress={() => Keyboard.dismiss()}
@@ -31,7 +39,12 @@ const Signup = ({ navigation }) => {
             ¿Ya tienes una cuenta? Inicia sesión
           </Text>
         </View>
-        <View style={styles._btn_section}>
+        <View
+          style={{
+            ...styles._btn_section,
+            marginBottom: Platform.OS === "ios" ? keyboardHeight + 10 : 0,
+          }}
+        >
           <Button
             title={"Crear cuenta"}
             onPress={() => navigation.navigate("VerificationCode")}

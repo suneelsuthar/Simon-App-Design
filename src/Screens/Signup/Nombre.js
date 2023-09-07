@@ -1,3 +1,5 @@
+//@ts-check
+
 import React, { useState } from "react";
 import {
   View,
@@ -5,13 +7,16 @@ import {
   StyleSheet,
   Keyboard,
   TouchableWithoutFeedback,
+  Platform,
 } from "react-native";
 import theme from "../../../theme";
 import { Input, Button } from "../../Components";
+import { useKeyboard } from "../../hooks/KeyboardAware";
 const Nombre = ({ navigation }) => {
   const [num, setnum] = useState("");
   const [surname, setsurname] = useState("");
   const [secsurname, setsecsurname] = useState("");
+  const keyboardHeight = useKeyboard();
 
   return (
     <TouchableWithoutFeedback
@@ -40,7 +45,12 @@ const Nombre = ({ navigation }) => {
             onChangeText={(v) => setsecsurname(v)}
           />
         </View>
-        <View style={styles._btn_section}>
+        <View
+          style={{
+            ...styles._btn_section,
+            marginBottom: Platform.OS === "ios" ? keyboardHeight + 10 : 0,
+          }}
+        >
           <Button
             title={"Continuar"}
             onPress={() => navigation.navigate("Celular")}

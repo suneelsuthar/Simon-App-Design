@@ -16,6 +16,26 @@ import TravellerIcon from "./TravellerIcon";
 import DelayIcon from "./DelayIcon";
 import RadioIcon from "./RadioIcon";
 import TimeIcon from "./TimeIcon";
+import BackIcon from "./BackIcon";
 
-
-export {BankIcon,CardIcon,FlightIcon,UsersIcon,PlainIcon,DropdownIcon,DepartureIcon,DestinationIcon,EditIcon,NextIcon,PreIcon,CalendarIcon,ClockIcon,ArrowDownIcon,TravellerIcon,DelayIcon,RadioIcon,TimeIcon}
+export {
+  BankIcon,
+  CardIcon,
+  FlightIcon,
+  BackIcon,
+  UsersIcon,
+  PlainIcon,
+  DropdownIcon,
+  DepartureIcon,
+  DestinationIcon,
+  EditIcon,
+  NextIcon,
+  PreIcon,
+  CalendarIcon,
+  ClockIcon,
+  ArrowDownIcon,
+  TravellerIcon,
+  DelayIcon,
+  RadioIcon,
+  TimeIcon,
+};

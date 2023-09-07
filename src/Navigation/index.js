@@ -4,6 +4,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { FirstPage, Celular, Nombre, VerificationCode } from "../Screens";
 import UserDate from "../Screens/Signup/UserDate";
 import UserGender from "../Screens/Signup/UserGender";
+import { BackIcon, CalendarIcon } from "../../assets/svg";
+import { WithLocalSvg } from "react-native-svg";
 
 const Stack = createNativeStackNavigator();
 function Navigation() {
@@ -22,6 +24,7 @@ function Navigation() {
           options={{
             headerShadowVisible: false,
             headerTitle: "",
+            headerLeft: () => <BackIcon backScreen={"FirstPage"} />,
           }}
         />
 
@@ -31,6 +34,7 @@ function Navigation() {
           options={{
             headerShadowVisible: false,
             headerTitle: "",
+            headerLeft: () => <BackIcon backScreen={"Nombre"} />,
           }}
         />
         <Stack.Screen
@@ -39,6 +43,7 @@ function Navigation() {
           options={{
             headerShadowVisible: false,
             headerTitle: "",
+            headerLeft: () => <BackIcon backScreen={"Celular"} />,
           }}
         />
         <Stack.Screen
@@ -47,6 +52,7 @@ function Navigation() {
           options={{
             headerShadowVisible: false,
             headerTitle: "",
+            headerLeft: () => <BackIcon backScreen={"VerificationCode"} />,
           }}
         />
         <Stack.Screen
@@ -55,6 +61,7 @@ function Navigation() {
           options={{
             headerShadowVisible: false,
             headerTitle: "",
+            headerLeft: () => <BackIcon backScreen={"UserDate"} />,
           }}
         />
       </Stack.Navigator>

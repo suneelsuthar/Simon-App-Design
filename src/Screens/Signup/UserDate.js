@@ -1,3 +1,4 @@
+//@ts-check
 import {
   View,
   Text,
@@ -5,10 +6,12 @@ import {
   Keyboard,
   StyleSheet,
   TextInput,
+  Platform,
 } from "react-native";
 import React from "react";
 import theme from "../../../theme";
 import { Button } from "../../Components";
+import { useKeyboard } from "../../hooks/KeyboardAware";
 
 const UserDate = ({ navigation }) => {
   const [day, setDay] = React.useState("");
@@ -21,6 +24,8 @@ const UserDate = ({ navigation }) => {
   if (month > 12) {
     setMonth("");
   }
+
+  const keyboardHeight = useKeyboard();
 
   console.log(day, month, year);
 
@@ -79,7 +84,12 @@ const UserDate = ({ navigation }) => {
             />
           </View>
         </View>
-        <View style={styles._btn_section}>
+        <View
+          style={{
+            ...styles._btn_section,
+            marginBottom: Platform.OS === "ios" ? keyboardHeight + 10 : 0,
+          }}
+        >
           <Button
             title={"Continuar"}
             onPress={() => navigation.navigate("UserGender")}

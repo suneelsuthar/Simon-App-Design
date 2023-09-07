@@ -1,14 +1,17 @@
+//@ts-check
 import {
   View,
   Text,
   TouchableWithoutFeedback,
   StyleSheet,
   Keyboard,
+  Platform,
 } from "react-native";
 import React from "react";
 import { Button } from "../../Components";
 import theme from "../../../theme";
 import { SelectList } from "react-native-dropdown-select-list";
+import { useKeyboard } from "../../hooks/KeyboardAware";
 
 const UserGender = () => {
   const [selected, setSelected] = React.useState("");
@@ -18,6 +21,8 @@ const UserGender = () => {
     { key: "Hombre ", value: "Hombre" },
     { key: "Prefiero no especificado", value: "Prefiero no especificado" },
   ];
+
+  const keyboardHeight = useKeyboard();
   console.log(selected, "selected");
   return (
     <TouchableWithoutFeedback
@@ -54,8 +59,16 @@ const UserGender = () => {
             />
           </View>
         </View>
-        <View style={styles._btn_section}>
-          <Button title={"Continuar"} />
+        <View
+          style={{
+            ...styles._btn_section,
+            marginBottom: Platform.OS === "ios" ? keyboardHeight + 10 : 0,
+          }}
+        >
+          <Button
+            title={"Continuar"}
+            onPress={() => console.log("hola gaja")}
+          />
         </View>
       </View>
     </TouchableWithoutFeedback>
