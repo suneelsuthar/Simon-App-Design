@@ -49,7 +49,7 @@ const UserDate = ({ navigation }) => {
               keyboardType="number-pad"
               multiline={true}
               textAlign="center"
-              verticalAlign="top"
+              verticalAlign="middle"
               numberOfLines={1}
               autoFocus
             />
@@ -62,7 +62,7 @@ const UserDate = ({ navigation }) => {
               keyboardType="number-pad"
               multiline={true}
               textAlign="center"
-              verticalAlign="top"
+              verticalAlign="middle"
               numberOfLines={1}
             />
             <TextInput
@@ -74,7 +74,7 @@ const UserDate = ({ navigation }) => {
               maxLength={4}
               value={year}
               textAlign="center"
-              verticalAlign="top"
+              verticalAlign="middle"
               numberOfLines={1}
             />
           </View>
