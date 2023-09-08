@@ -12,6 +12,7 @@ import React from "react";
 import theme from "../../../theme";
 import { Button } from "../../Components";
 import { useKeyboard } from "../../hooks/KeyboardAware";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const UserDate = ({ navigation }) => {
   const [day, setDay] = React.useState("");
@@ -52,7 +53,7 @@ const UserDate = ({ navigation }) => {
               value={day}
               maxLength={2}
               keyboardType="number-pad"
-              multiline={true}
+              // multiline={true}
               textAlign="center"
               verticalAlign="middle"
               numberOfLines={1}
@@ -65,21 +66,21 @@ const UserDate = ({ navigation }) => {
               value={month}
               maxLength={2}
               keyboardType="number-pad"
-              multiline={true}
+              // multiline={true}
               textAlign="center"
-              verticalAlign="middle"
+              verticalAlign="bottom"
               numberOfLines={1}
             />
             <TextInput
               placeholder="Año"
-              multiline={true}
+              // multiline={true}
               style={styles._input}
               onChangeText={(e) => setYear(e)}
               keyboardType="number-pad"
               maxLength={4}
               value={year}
               textAlign="center"
-              verticalAlign="middle"
+              verticalAlign="bottom"
               numberOfLines={1}
             />
           </View>
@@ -128,6 +129,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "30%",
     borderRadius: 8,
+    padding: 20,
 
     marginVertical: 14,
     fontFamily: theme.medium,

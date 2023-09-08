@@ -6,7 +6,7 @@ import { TouchableOpacity } from "react-native";
 function BackIcon({ props, backScreen }) {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.goBack(backScreen)}>
       <Svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 28 28"
@@ -14,7 +14,6 @@ function BackIcon({ props, backScreen }) {
           width: 16,
           height: 16,
         }}
-        onPress={() => navigation.goBack(backScreen)}
       >
         <G id="Layer_2" data-name="Layer 2">
           <G id="Layer_1-2" data-name="Layer 1">

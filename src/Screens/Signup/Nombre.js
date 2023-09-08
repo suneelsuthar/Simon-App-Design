@@ -8,6 +8,7 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
   Platform,
+  KeyboardAvoidingView,
 } from "react-native";
 import theme from "../../../theme";
 import { Input, Button } from "../../Components";
@@ -48,7 +49,7 @@ const Nombre = ({ navigation }) => {
         <View
           style={{
             ...styles._btn_section,
-            marginBottom: Platform.OS === "ios" ? keyboardHeight + 10 : 0,
+            marginBottom: 10,
           }}
         >
           <Button
