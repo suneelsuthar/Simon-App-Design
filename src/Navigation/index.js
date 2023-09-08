@@ -1,7 +1,9 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// import { FirstPage } from "../Screens";
 import { FirstPage, Celular, Nombre, VerificationCode } from "../Screens";
+
 import UserDate from "../Screens/Signup/UserDate";
 import UserGender from "../Screens/Signup/UserGender";
 import { BackIcon, CalendarIcon } from "../../assets/svg";

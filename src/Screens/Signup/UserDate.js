@@ -19,10 +19,10 @@ const UserDate = ({ navigation }) => {
   const [month, setMonth] = React.useState("");
   const [year, setYear] = React.useState("");
 
-  if (day > 31) {
+  if (day > "31") {
     setDay("");
   }
-  if (month > 12) {
+  if (month > "12") {
     setMonth("");
   }
 
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   _input: {
     backgroundColor: theme.greyLight,
     height: 59,
-    borderRadius: 100,
+    // borderRadius: 100,
     justifyContent: "center",
     alignItems: "center",
     width: "30%",
