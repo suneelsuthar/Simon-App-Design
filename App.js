@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from "react";
-import { StyleSheet,  LogBox, SafeAreaView } from "react-native";
+import { StyleSheet, LogBox, SafeAreaView, View } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import Navigation from "./src/Navigation";
@@ -33,7 +33,7 @@ export default function App() {
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
       <Navigation />
-    </SafeAreaView>
+    </View>
   );
 }
 
