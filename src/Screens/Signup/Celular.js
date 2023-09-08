@@ -13,7 +13,7 @@ import { CountryCodePicker } from "../../Components";
 import theme from "../../../theme";
 import { Button } from "../../Components";
 import { useKeyboard } from "../../hooks/KeyboardAware";
-import ts from "typescript";
+// import ts from "typescript";
 const Signup = ({ navigation }) => {
   const numberHandleChange = (_num) => {
     console.log(_num);
