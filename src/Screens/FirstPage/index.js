@@ -1,6 +1,8 @@
 import React from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import theme from "../../../theme";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const FirstPage = ({ navigation }) => {
   return (
@@ -60,8 +62,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     elevation: 4,
   },
-  _btn_text: {
-  },
+  _btn_text: {},
 });
 
 export default FirstPage;

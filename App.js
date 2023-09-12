@@ -1,16 +1,16 @@
 import React, { useEffect, useCallback } from "react";
-import { StyleSheet,  LogBox, SafeAreaView ,Text} from "react-native";
+import { StyleSheet, LogBox, SafeAreaView, View } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
-import Navigation from './src/Navigation'
+import Navigation from "./src/Navigation";
 LogBox.ignoreAllLogs();
 export default function App() {
   let [fontsLoaded] = useFonts({
-    "HelveticaNeueLight": require("./assets/Fonts/HelveticaNeueLight.ttf"),
-    "HelveticaNeueMedium": require("./assets/Fonts/HelveticaNeueMedium.ttf"),
-    "HelveticaNeueCondensedBold": require("./assets/Fonts/HelveticaNeueCondensedBold.ttf"),
-    "HelveticaNeueBold": require("./assets/Fonts/HelveticaNeueBold.ttf"),
-    "Helvetica-Neue-Regular":require('./assets/Fonts/Helvetica-Neue-Regular.otf')
+    HelveticaNeueLight: require("./assets/Fonts/HelveticaNeueLight.ttf"),
+    HelveticaNeueMedium: require("./assets/Fonts/HelveticaNeueMedium.ttf"),
+    HelveticaNeueCondensedBold: require("./assets/Fonts/HelveticaNeueCondensedBold.ttf"),
+    HelveticaNeueBold: require("./assets/Fonts/HelveticaNeueBold.ttf"),
+    "Helvetica-Neue-Regular": require("./assets/Fonts/Helvetica-Neue-Regular.otf"),
   });
 
   useEffect(() => {
@@ -31,10 +31,9 @@ export default function App() {
     return null;
   }
   return (
-    <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
+    <View style={styles.container} onLayout={onLayoutRootView}>
       <Navigation />
-
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -43,4 +42,3 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-

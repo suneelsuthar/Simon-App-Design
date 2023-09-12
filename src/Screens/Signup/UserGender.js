@@ -55,6 +55,8 @@ const UserGender = () => {
                 borderRightWidth: 0,
                 borderBottomWidth: 0,
                 marginTop: 0,
+                borderTopLeftRadius: 0,
+                borderTopRightRadius: 0,
               }}
             />
           </View>
