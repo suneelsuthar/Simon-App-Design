@@ -1,7 +1,7 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { FirstPage, Celular, Nombre, VerificationCode } from "../Screens";
+import { FirstPage, Celular, Nombre, VerificationCode,Direccion,Password } from "../Screens";
 import UserDate from "../Screens/Signup/UserDate";
 import UserGender from "../Screens/Signup/UserGender";
 import { BackIcon } from "../../assets/svg";
@@ -11,7 +11,8 @@ function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+       
+<Stack.Screen
           name="FirstPage"
           component={FirstPage}
           options={{ headerShown: false }}
@@ -63,6 +64,26 @@ function Navigation() {
             headerLeft: () => <BackIcon backScreen={"UserDate"} />,
           }}
         />
+         <Stack.Screen
+          name="Password"
+          component={Password}
+          options={{
+            headerShadowVisible: false,
+            headerTitle: "",
+            headerLeft: () => <BackIcon backScreen={"FirstPage"} />,
+          }}
+        />
+
+<Stack.Screen
+          name="Direccion"
+          component={Direccion}
+          options={{
+            headerShadowVisible: false,
+            headerTitle: "",
+            headerLeft: () => <BackIcon backScreen={"FirstPage"} />,
+          }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

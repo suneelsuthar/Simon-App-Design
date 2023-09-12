@@ -13,7 +13,7 @@ import theme from "../../../theme";
 import { SelectList } from "react-native-dropdown-select-list";
 import { useKeyboard } from "../../hooks/KeyboardAware";
 
-const UserGender = () => {
+const UserGender = ({navigation}) => {
   const [selected, setSelected] = React.useState("");
 
   const data = [
@@ -69,7 +69,7 @@ const UserGender = () => {
         >
           <Button
             title={"Continuar"}
-            onPress={() => console.log("hola gaja")}
+            onPress={() => navigation.navigate("Direccion")}
           />
         </View>
       </View>

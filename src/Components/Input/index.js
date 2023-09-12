@@ -2,9 +2,9 @@ import React from "react";
 import { View, TouchableOpacity, Text, StyleSheet,TextInput } from 'react-native'
 import theme from "../../../theme";
 
-const Input = ({value,onChangeText,placeholder}) => {
+const Input = ({value,onChangeText,placeholder,secureTextEntry}:any) => {
     return (
-        <TextInput value={value} placeholder={placeholder} style={styles._input} onChangeText={(e)=>onChangeText && onChangeText(e)} />
+        <TextInput secureTextEntry={secureTextEntry} value={value} placeholder={placeholder} style={styles._input} onChangeText={(e)=>onChangeText && onChangeText(e)} />
     )
 }
 
@@ -18,10 +18,10 @@ const styles = StyleSheet.create({
         borderRadius:100,
         justifyContent:"center",
         alignItems:"center",
-        borderRadius:8,
-        marginVertical:14,
-        fontFamily:theme.medium,
         padding:10,
+        marginVertical:14,
+        borderRadius:8,
+        fontFamily:theme.medium,
         fontSize:16,
         elevation:1
     },
